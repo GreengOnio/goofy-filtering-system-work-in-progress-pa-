@@ -1,3 +1,3 @@
-Please put "projecttest" file in your xampp trajectory so silly database can link to vscode :3
+Please put "projecttest" folder in your xampp trajectory so silly database can link to vscode :3
 
 Paste in: Local Disk C:\xampp\mysql\data
