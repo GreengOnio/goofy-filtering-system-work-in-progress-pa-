@@ -18,11 +18,6 @@ label, h2, small, h1{
     padding-bottom: 10px;
 }
 
-#profileDetails {
-    color: #6f56ad;
-    text-shadow: 1px 1px white;
-}
-
 h2, h1 {
     text-align: center;
     margin-top: 20px;
