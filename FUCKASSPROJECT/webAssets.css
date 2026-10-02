@@ -1,0 +1,78 @@
+body {
+    background: url(assets/funnyBG.jpg) no-repeat center bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* ------------------------------------------------------------- */
+label, h2, small, h1{
+    color: rgb(28, 82, 140);
+    text-shadow: 1px 1px white;
+}
+
+#header {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+h2, h1 {
+    text-align: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+}
+
+/* -------------------------------------------------------------- */
+#maintableCard {
+    border: solid 3px rgba(255, 255, 255, 0.278);
+    border-radius: 10px;
+
+    margin: 20px;
+    margin-top: 15px;
+
+    width: 100%;
+}
+
+/* -------------------------------------------------------------- */
+.form-control, .form-select {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.404);
+
+    width: fit-content;
+    width: 100%;
+}
+
+.form-control::placeholder, .form-select, .form-check-label {
+    color: rgb(29, 5, 90)    
+}
+
+select {
+    text-align: center;
+}
+
+#mainresultCard {
+    padding: 20px;
+
+    height: fit-content;
+}
+
+/* -------------------------------------------------------------- */
+.schedule-available {
+    background-color: #d1e7dd;
+    color: #0f9456;
+}
+
+.schedule-occupied {
+    background-color: #f8d7da;
+    color: #a61a25;
+}
+
+#schedcardHeader {
+    background-color: #6268d320;
+}
