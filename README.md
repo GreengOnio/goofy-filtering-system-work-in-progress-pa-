@@ -11,7 +11,7 @@ Use the data.sql and structure.sql from the "Official_Database" folder to import
 > Import **`structure.sql`** first, then **`data.sql`**.
 > `data.sql` inserts rows that depend on the tables created by `structure.sql`.
 
-6. Click **Choose File**, go to `C:\xampp\htdocs\forgithub\database`, select **`structure.sql`**, scroll down and click **Import**.
+6. Click **Choose File**, open `Official_Data` folder, select **`structure.sql`**, scroll down and click **Import**.
 7. Repeat the import with **`data.sql`** from the same folder.
 
 When both imports finish you should see green success messages, and the tables will appear in the sidebar.
