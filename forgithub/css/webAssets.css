@@ -1,0 +1,286 @@
+/* GENERAL LAYOUT*/
+/* accent color */
+:root {
+    --accent: #3e1987;      /* main purple: pills, borders */
+}
+
+body {
+    background: #e9ecef;    /* fallback while the image loads */
+}
+
+/* background image on its own fixed layer (keeps animations smooth) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url(../assets/funnyBG.jpg) no-repeat center bottom / cover;
+    will-change: transform;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+
+.mainContainer {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#maintableCard {
+    border: solid 3px rgba(255, 255, 255, 0.278);
+    border-radius: 10px;
+    margin: 20px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#header {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.buttonSection {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* TEXTS */
+label, h2, small, h1 {
+    color: rgb(28, 82, 140);
+    text-shadow: 1px 1px white;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* FORM LAYOUT */
+.form-control, .form-select {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.404);
+    width: 100%;
+}
+
+.form-control::placeholder, .form-select, .form-check-label {
+    color: rgb(29, 5, 90);
+}
+
+select {
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* .SEGMENTS SECTIONS */
+.segmented {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+/* hide the real input but keep it keyboard-accessible */
+.segmented input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.segmented label {
+    margin: 0;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+    color: var(--accent);
+    background: #ffffff3d;
+    border-left: 1px solid var(--accent);
+    transition: background 0.15s, color 0.15s;
+}
+
+.segmented label:first-of-type {
+    border-left: 0;
+}
+
+.segmented label:hover {
+    background: #efe8f5;
+}
+
+/* selected state */
+.segmented input:checked + label {
+    background: var(--accent);
+    color: #fff;
+    text-shadow: none;
+}
+
+/* keyboard focus ring */
+.segmented input:focus-visible + label {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* FILTER SECTIONS */
+
+/* More Filters and Close button */
+#toggleMoreFilters {
+    z-index: 2;
+}
+
+.moreLink .label-open                    { display: none; }
+.moreLink:not(.collapsed) .label-open    { display: inline; }
+.moreLink:not(.collapsed) .label-closed  { display: none; }
+
+/* inputs inside the filter box */
+.filterBox label {
+    text-shadow: none;
+}
+
+.filterBox select,
+.filterBox input[type="text"] {
+    padding: 4px 8px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+}
+
+/* collapse sections */
+.section-toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;                     /* closed state */
+    border: solid 2px rgba(255, 255, 255, 0.278);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.section-toggle:not(.collapsed) {
+    background: rgba(255, 255, 255, 0.299);      /* open state: translucent white */
+}
+
+.section-toggle::before {
+    content: "–";
+    color: #000000;
+    margin-right: 10px;
+}
+
+.section-toggle.collapsed::before {
+    content: "+";
+}
+
+/* collapsing element: no padding here, or the animation jumps */
+.fbody {
+    background: transparent;
+}
+
+.fbody-inner {
+    padding: 10px 12px;
+}
+
+
+/* --------------------------------------------------------------------------------------------------- */
+/* AVAILABILITY COLOR CODING */
+#schedcardHeader {
+    background-color: #6268d320;
+}
+
+.schedule-available {
+    background-color: #d1e7dd;
+    color: #0f9456;
+}
+
+.schedule-occupied {
+    background-color: #f8d7da;
+    color: #a61a25;
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* PAGINATION SECTION */
+.pager {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+/* every button has the same width so the row never shifts */
+.pager a,
+.pager span {
+    box-sizing: border-box;
+    width: 44px;
+    padding: 6px 0;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+}
+
+.pager .nav {                       /* Prev / Next */
+    width: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.pager .current  { background: #000; color: #fff; border-color: #000; }
+.pager .disabled { color: #999; }
+.pager .dots     { border: 0; background: transparent; }
+
+/* --------------------------------------------------------------------------------------------------- */
+/* BACK TO TOP SECTION */
+.pagerRow {
+    position: relative;
+}
+
+.backTop {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 12px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.backTop:hover {
+    background: #efe8f5;
+}
+
+/* narrow screens: drop it under the pager so they don't overlap */
+@media (max-width: 768px) {
+    .backTop {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 0 auto 12px;
+    }
+}
